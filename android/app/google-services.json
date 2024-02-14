@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "788593824432",
+    "project_id": "mynotes-pabloboo",
+    "storage_bucket": "mynotes-pabloboo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788593824432:android:75cdadcfc4ca1bc3e86175",
+        "android_client_info": {
+          "package_name": "com.pabloboo.mynotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVxq5jtY7TQDCDO1x71lY280yTQM3ihDk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

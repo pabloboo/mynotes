@@ -456,3 +456,34 @@ Widget flutter binding: Enable widget binding before Firebase.initializeApp. [Fl
 FutureBuilder: It takes a Future, performs a Future, and when this future has succeeded or failed, it gives you a callback that can let you render a widget depending on the result.
 
 Loading screen while waiting: We can use connection states (`snapshot.connectionState`) to determine the state of a Future.
+
+# Login View
+Right-click on a Class name → rename symbol (rename a class).
+
+It is not a good practice to write the code in the main.dart class.
+
+TIP: in VSC, if you create a new file with the complete path, it creates the necessary folder. Example “views/login_view.dart”
+
+Handling exceptions example:
+
+```dart
+try {
+  final userCredential =  await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    email: email, 
+    password: password
+  );
+  print(userCredential);
+} on FirebaseAuthException catch (e) {
+  print('Something bad happened');
+  print(e.code);
+  if (e.code == 'weak-password') {
+    print('Weak password');
+  } else if (e.code == 'email-already-in-use') {
+    print('Email already in use');
+  } else if (e.code == 'invalid-email') {
+    print('Invalid email');
+  } else {
+    print(e.code);
+  }
+}
+```

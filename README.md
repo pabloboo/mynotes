@@ -487,3 +487,11 @@ try {
   }
 }
 ```
+
+# Separating App Initialization from Login and Register Screens
+
+This is usually not a good idea, we need to clean this app.
+
+Email verification is important so another person doesn’t use your email address in another apps.
+
+user? → conditionally access a property of the user variable.

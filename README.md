@@ -510,3 +510,13 @@ Navigator.of(context).push(
 ```
 
 BuildContext is a package of information to pass information from one widget to another.
+
+# Link between login and register views
+
+Named routes: https://docs.flutter.dev/cookbook/navigation/named-routes 
+
+Named routes vs anonymous routes: anonymous routes are not as reusable.
+
+A named route has a name asotiated. ‘routes’ property on MaterialApp widget.
+
+Navigator.of(context).pushNamedAndRemoveUntil → remove everything before putting the next screen.

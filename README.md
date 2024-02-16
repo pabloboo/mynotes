@@ -495,3 +495,18 @@ This is usually not a good idea, we need to clean this app.
 Email verification is important so another person doesn’t use your email address in another apps.
 
 user? → conditionally access a property of the user variable.
+
+# Email verification view
+
+Push a view into a screen: when you have an screen and after pressing a button or something another screen pushes itself on top of another screen.
+
+```dart
+Navigator.of(context).push(
+  MaterialPageRoute(
+    builder: ((context) => const VerifyEmailView()
+    )
+  )
+);
+```
+
+BuildContext is a package of information to pass information from one widget to another.

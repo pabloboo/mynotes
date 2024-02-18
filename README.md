@@ -520,3 +520,17 @@ Named routes vs anonymous routes: anonymous routes are not as reusable.
 A named route has a name asotiated. ‘routes’ property on MaterialApp widget.
 
 Navigator.of(context).pushNamedAndRemoveUntil → remove everything before putting the next screen.
+
+# Logout view
+
+https://api.flutter.dev/flutter/material/AppBar-class.html 
+
+Flutter tells you to avoid print calls in production because it can be stored on the mobile and accessed by other people. Use logs instead.
+
+PopupMenuButton and PopupMenuItem are usually used together.
+
+PopupMenuItem<T>: T means something you define.
+
+import …….. show → only import a specific part of the dependency.
+
+TIP: On Windows Shift + Alt + F → auto indent code.

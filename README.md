@@ -552,3 +552,13 @@ Put route maps in one files as constants.
 A better way of popping error dialogs is to use overlays but it is too complicated for this part of the tutorial.
 
 We have to handle other fireExceptions that might occurre and also another FirebaseAuthExceptions that might occurre because maybe on the future there is another FirebaseAuthException.
+
+# Error Handling in Register View, Next Screen After Registration
+
+After registration we need to confirm the user’s mail.
+
+Changes on the main function can’t be reloaded using hot reload, you have to do hot restart.
+
+In this case we can use pushNamed instead of pushNamedAndRemoveUntil because if the user realizes that he has done something wrong on the registration screen he can push the back button without removing so many screens.
+
+We can make the verification email process better by sending the email verification when the user registers instead of on the next screen.

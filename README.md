@@ -546,3 +546,9 @@ Put a comma at the end of each parameter so when you tap shift+alt+f it indents 
 Hardcoding is copy-pasting a value everywhere you use it so when you have to change it you have to change the value everywhere you used it. You should create a variable to avoid hardcoding so you only have to change the value in only one place. You don’t want to repeat yourself.
 
 Put route maps in one files as constants.
+
+# Error handling in login view
+
+A better way of popping error dialogs is to use overlays but it is too complicated for this part of the tutorial.
+
+We have to handle other fireExceptions that might occurre and also another FirebaseAuthExceptions that might occurre because maybe on the future there is another FirebaseAuthException.

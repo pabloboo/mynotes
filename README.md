@@ -584,3 +584,7 @@ We need a factory initializer that creates an AuthUser from an AuthUser. factory
 We also need an auth provider. auth_provider.dart groups all the providers.
 
 Why is AuthService an AuthProvider? it relays the messages of the given auth provider, but can have more logic.
+
+# Migrating to Auth Service
+
+AuthService.firebase → we need this so we don’t have to instantiate it everywhere.

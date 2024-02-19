@@ -534,3 +534,9 @@ PopupMenuItem<T>: T means something you define.
 import …….. show → only import a specific part of the dependency.
 
 TIP: On Windows Shift + Alt + F → auto indent code.
+
+# Go from login to notes view
+
+pushNamedAndRemoveUntil → pushing is the concept of having a screen and moving phisically another screen on top of it. Remove means that you first remove the other screens and then put the new one on top.
+
+Put a comma at the end of each parameter so when you tap shift+alt+f it indents correctly.

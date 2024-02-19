@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer' as devtools show log;
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -9,7 +10,6 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-
   late final TextEditingController _email;
   late final TextEditingController _password;
 
@@ -58,33 +58,33 @@ class _LoginViewState extends State<LoginView> {
               final email = _email.text;
               final password = _password.text;
               try {
-                final userCredential =  await FirebaseAuth.instance.signInWithEmailAndPassword(
-                  email: email, 
-                  password: password
+                await FirebaseAuth.instance
+                    .signInWithEmailAndPassword(
+                        email: email, password: password);
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/notes/',
+                  (route) => false,
                 );
-                print(userCredential);
               } on FirebaseAuthException catch (e) {
-                print('Something bad happened');
-                print(e.code);
+                devtools.log('Something bad happened');
+                devtools.log(e.code);
                 if (e.code == 'invalid-credential') {
-                  print('Invalid credential');
+                  devtools.log('Invalid credential');
                 } else {
-                  print(e.code);
+                  devtools.log(e.code);
                 }
               }
-            }, 
+            },
             child: const Text('Login'),
           ),
-          TextButton(onPressed: () {
-            Navigator.of(context).pushNamedAndRemoveUntil(
-              '/register/',
-             (route) => false
-            );
-          }, 
-          child: const Text('Not registered yet? Register here!'))
+          TextButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .pushNamedAndRemoveUntil('/register/', (route) => false);
+              },
+              child: const Text('Not registered yet? Register here!'))
         ],
       ),
     );
   }
-
 }

@@ -566,3 +566,21 @@ We can make the verification email process better by sending the email verificat
 # Confirm identity before going to main UI
 
 On the login button even if the user has not confirmed the email it directly sends it to the notes view. We have to take care of that checking if the user has confirmed its email on the login view.
+
+# Auth Service
+
+We need an auth provider abstract class and AuthService.
+
+We are missing a layer between our code and the firebase dependency. Maybe in the future you will want another form for authentication. Firebase authentication is a provider.
+
+The abstract class is a contract. The concrete provider of that class will be called firebaseAuthProvider. The AuthService class will take the provider and expose its functionalities (the UI talks to the service, the service talks to the provider and the provider talks to Firebase).
+
+We need an auth user. We shouldn’t expose Firebase’s user to the UI.
+
+@immutable → tells that the class can only have immutable fields.
+
+We need a factory initializer that creates an AuthUser from an AuthUser. factory AuthUser fromFirebase(User user) ⇒ AuthUser(user.emailVerified)
+
+We also need an auth provider. auth_provider.dart groups all the providers.
+
+Why is AuthService an AuthProvider? it relays the messages of the given auth provider, but can have more logic.

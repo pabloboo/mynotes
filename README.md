@@ -540,3 +540,9 @@ TIP: On Windows Shift + Alt + F → auto indent code.
 pushNamedAndRemoveUntil → pushing is the concept of having a screen and moving phisically another screen on top of it. Remove means that you first remove the other screens and then put the new one on top.
 
 Put a comma at the end of each parameter so when you tap shift+alt+f it indents correctly.
+
+# Cleaning up our routes
+
+Hardcoding is copy-pasting a value everywhere you use it so when you have to change it you have to change the value everywhere you used it. You should create a variable to avoid hardcoding so you only have to change the value in only one place. You don’t want to repeat yourself.
+
+Put route maps in one files as constants.

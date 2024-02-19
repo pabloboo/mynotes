@@ -562,3 +562,7 @@ Changes on the main function can’t be reloaded using hot reload, you have to d
 In this case we can use pushNamed instead of pushNamedAndRemoveUntil because if the user realizes that he has done something wrong on the registration screen he can push the back button without removing so many screens.
 
 We can make the verification email process better by sending the email verification when the user registers instead of on the next screen.
+
+# Confirm identity before going to main UI
+
+On the login button even if the user has not confirmed the email it directly sends it to the notes view. We have to take care of that checking if the user has confirmed its email on the login view.

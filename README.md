@@ -614,3 +614,19 @@ Why do we use mocks? we need a mock auth provider.
 Test groups are for grouping together similar tests.
 
 TDD: write tests → write functionality for that tests → check that the tests pass.
+
+# CRUD local storage
+
+CRUD (Create, Read, Update, Delete).
+
+SQLite: library created in C to store data in a file.
+
+DB Browser: sqlite is what talks to the sqlite files, and db browser is the container where sqlite runs. Free open source program.
+
+We need the path provider to get our app’s documents directory for database storage.
+
+We need the patch package because it has a useful “join” function.
+
+Add dependencies: flutter pub add sqflite, flutter pub add path_provider, flutter pub add path
+
+Triple quotes (’’’ ‘’’) enables you to put any character without the need of scaping it.

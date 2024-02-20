@@ -588,3 +588,29 @@ Why is AuthService an AuthProvider? it relays the messages of the given auth pro
 # Migrating to Auth Service
 
 AuthService.firebase → we need this so we don’t have to instantiate it everywhere.
+
+# Unit testing our Auth Service
+
+Why do we need unit tests? We need to guard ourselves against unintentional edits.
+
+TDD (Test Driven Development): tests need to always be written before code, not the other way around. Search for resources on TDD in Flutter.
+
+Different types of tests: unit, widget and integration tests.
+
+Unit tests: examples are tests on the AuthProvider class (unit of code).
+
+Widget tests: make sure the UI you create is working as it should. Example: if log in button stays disable until login is correctly.
+
+Integration test: AuthService because you are testing an end to end fuctionality (AuthService calls Provider and Firebase and UI is not involved).
+
+We are not be calling firebase, we are doing mocking (imitating firebaseAuthProvider).
+
+Dev dependencies are not used in the final product, only on development.
+
+We need our test dependencies: flutter pub add test --dev
+
+Why do we use mocks? we need a mock auth provider.
+
+Test groups are for grouping together similar tests.
+
+TDD: write tests → write functionality for that tests → check that the tests pass.

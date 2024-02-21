@@ -650,3 +650,11 @@ FutureBuilder: it subscribes to a Future and when the value of the Future change
 ConnectionState: done is when a Future completes it task. If you are working with a Stream it never ends so you must use ConnectionState.waiting when working with Streams.
 
 NotesService should be a Singleton. A Singleton is a pattern where a class instance is the only one inside the entire application. NotesService should only have one copy on the entire application.
+
+# Preparing to Create New Notes
+
+The cons of using a floating action button is that it may hide some information and also iOS does not use it so, since we are developing a multiplatform application, may not be the best idea.
+
+We can use the appBar to place action buttons (not inside the 3 dots because adding a new note is a key functionality).
+
+We use pushNamed so the user can go back to the list of notes.

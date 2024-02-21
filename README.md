@@ -670,3 +670,15 @@ We have changed the way to create the StreamController so it listens to all chan
 We delete the dispose function so we don’t loose state of the notes doing hot reload.
 
 We provided a ListView for displaying the notes with maximum 1 line of text displayed.
+
+# Deleting Existing Notes in Notes View
+
+Place a delete item next to each note.
+
+“When you do a thing 3 times think about refactoring it” → we are about to create our third dialog → Instead of doing that we create a generic dialog.
+
+Delete dialog: Remember that we already have an error dialog? Can we make this generic? 1st break things and then code so you fix it (delete the error dialog we have).
+
+TIP: Find a file by name using Ctrl+p
+
+typedef DeleteNoteCallback = void Function(DatabaseNote note); → in listView we use that callback to pass the information of deleting a note to the parent widget (notes_view).

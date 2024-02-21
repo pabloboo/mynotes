@@ -630,3 +630,15 @@ We need the patch package because it has a useful “join” function.
 Add dependencies: flutter pub add sqflite, flutter pub add path_provider, flutter pub add path
 
 Triple quotes (’’’ ‘’’) enables you to put any character without the need of scaping it.
+
+# Working with Streams in Notes Service
+
+We need the stream and stream controller to cache data.
+
+Reactive programming: you have some data stored and you perform some operations, the date is updated and you get notified of those updates.
+
+Streams: pipes of data.
+
+Stream controller: interface to your streams.
+
+Stream: evolution of data through time (example: going from an empty list to a list with one element).

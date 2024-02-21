@@ -642,3 +642,11 @@ Streams: pipes of data.
 Stream controller: interface to your streams.
 
 Stream: evolution of data through time (example: going from an empty list to a list with one element).
+
+# Preparing Notes View to read all notes
+
+FutureBuilder: it subscribes to a Future and when the value of the Future changes it lets you display a widget. It ties your Future logic with your UI logic.
+
+ConnectionState: done is when a Future completes it task. If you are working with a Stream it never ends so you must use ConnectionState.waiting when working with Streams.
+
+NotesService should be a Singleton. A Singleton is a pattern where a class instance is the only one inside the entire application. NotesService should only have one copy on the entire application.

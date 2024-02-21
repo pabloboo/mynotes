@@ -690,3 +690,9 @@ Instead of creating a view similar to the create note view we reuse the create n
 Rename the name of the file and also rename the name of the widget (right click → rename symbol).
 
 We created a getArgument function to pass arguments from one widget to another and we also changed the Callback name to make it general for every function that needs to use a note parameter.
+
+# Protecting NotesService with Current User
+
+We had to create an extension so we can filter the notes by user id inside a stream.
+
+Now by filtering notes by id only the user who created the note can see them displayed on the notes view.

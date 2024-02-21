@@ -662,3 +662,11 @@ We use pushNamed so the user can go back to the list of notes.
 # Creating New Notes
 
 Usually in mobile applications you don’t have a save button, all new changes are saved automatically.
+
+# Displaying Notes in Notes View
+
+We have changed the way to create the StreamController so it listens to all changes.
+
+We delete the dispose function so we don’t loose state of the notes doing hot reload.
+
+We provided a ListView for displaying the notes with maximum 1 line of text displayed.

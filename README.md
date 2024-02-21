@@ -682,3 +682,11 @@ Delete dialog: Remember that we already have an error dialog? Can we make this g
 TIP: Find a file by name using Ctrl+p
 
 typedef DeleteNoteCallback = void Function(DatabaseNote note); → in listView we use that callback to pass the information of deleting a note to the parent widget (notes_view).
+
+# Update Existing Notes
+
+Instead of creating a view similar to the create note view we reuse the create note view.
+
+Rename the name of the file and also rename the name of the widget (right click → rename symbol).
+
+We created a getArgument function to pass arguments from one widget to another and we also changed the Callback name to make it general for every function that needs to use a note parameter.

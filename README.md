@@ -726,3 +726,7 @@ Collections: Start a collections → notes (in this collection you will store th
 Documents: they are stored inside collections. 
 
 Streams of data: Firebase cloud storage gives us streams to work with.
+
+# Migrating to our Firestore Service
+
+In this chapter we had to comment all notesService and refactor de code so now we use the FirestoreDatabase.

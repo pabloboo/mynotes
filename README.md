@@ -730,3 +730,13 @@ Streams of data: Firebase cloud storage gives us streams to work with.
 # Migrating to our Firestore Service
 
 In this chapter we had to comment all notesService and refactor de code so now we use the FirestoreDatabase.
+
+# Sharing notes
+
+Share-plus plugin: https://pub.dev/packages/share_plus 
+
+A plugin goes well beyond flutter can deliver, unlike a dependency.
+
+flutter pub add share_plus → clean and rebuild app (flutter clean, flutter pub get, flutter run).
+
+By using that plugin we already have all the functionality we need to share a note.

@@ -696,3 +696,33 @@ We created a getArgument function to pass arguments from one widget to another a
 We had to create an extension so we can filter the notes by user id inside a stream.
 
 Now by filtering notes by id only the user who created the note can see them displayed on the notes view.
+
+# Writing Notes to Cloud Firestore
+
+Now the data is only stored on the phone, we have to store them on the cloud.
+
+First we stored the data locally to understand CRUD because Firebase abstracts most of the logic.
+
+https://firebase.flutter.dev/docs/firebase/overview 
+
+We are going to use cloud Firestore to store our notes.
+
+Two important concepts in Firestore are collections and documents. In noSQL there is a looser definition of information.
+
+Productions vs test mode: in test mode, as you are developing your application, you can use your database without having a user authenticated. We already have our authentication implemented so we are going to use production mode directly.
+
+You can specify various rules for your data: https://firebase.google.com/docs/firestore/security/get-started?authuse=0auth-required 
+
+This rules help you secure your database.
+
+[console.firebase.google.com](http://console.firebase.google.com) 
+
+Firestore → europe west → test mode → change rules to: reques.auth ≠ null
+
+Collections: https://firebase.flutter.dev/docs/firestore/usage 
+
+Collections: Start a collections → notes (in this collection you will store the notes, each document in this collection is a note).
+
+Documents: they are stored inside collections. 
+
+Streams of data: Firebase cloud storage gives us streams to work with.

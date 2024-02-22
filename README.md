@@ -740,3 +740,39 @@ A plugin goes well beyond flutter can deliver, unlike a dependency.
 flutter pub add share_plus → clean and rebuild app (flutter clean, flutter pub get, flutter run).
 
 By using that plugin we already have all the functionality we need to share a note.
+
+# Introduction to Bloc
+
+Bloc is used to separte the login of the UI from the business logic.
+
+Bloc is a library that allows us to separate our buisness logic from our presentation.
+
+flutter_bloc is a set of flutter specific bloc code that helps us with creating widgets.
+
+Bloc class is the core of the bloc library, you add events to that class and it produces states.
+
+Events → Bloc → states (input → Bloc → states).
+
+BlocProvider: Creates a Bloc instance and provides it to you. [bloclibrary.dev](http://bloclibrary.dev) 
+
+BlocListener: It can react to changes in your Bloc.
+
+BlocBuilder: uses your Bloc state changes to provide you with a widget.
+
+BlocConsumer: combines BlocListener and BlocBuilder.
+
+add dependencies: flutter pub add bloc, flutter_bloc. → flutter clean, flutter pub get, flutter run.
+
+emit() → function that allows you to pass a state out of your Bloc.
+
+Visibility widget: lets you show or not info depending on a variable value.
+
+Send an event from BlocConsumer to a Bloc:
+
+```dart
+onPressed: () {
+	context.
+		read<CounterBloc>()
+		.add(IncrementEvent(_controller.text));
+}
+```

@@ -776,3 +776,27 @@ onPressed: () {
 		.add(IncrementEvent(_controller.text));
 }
 ```
+
+# Converting our Auth Process to Bloc
+
+We need 3 main Bloc components: AuthBlocState, AuthBlocEvent, AuthBloc.
+
+Event→AuthBloc→State
+
+A constant constructor can’t call a non-constant super constractor of ‘AuthState’ → that’s why we have a constant constructor in AuthState, so extended classes can have constant constructors.
+
+In AuthStateLoggedIn we only need the user.
+
+In auth_event.dart we have the inputs to the AuthBloc and in auth_state.dart we have the outputs of AuthBloc.
+
+AuthStateLoading is a generic state that we created to say that we are doing the login, logout, etc. If we didn’t have it we would have to create a state for each async function loading.
+
+emit(…) is to communicate with the outside.
+
+vsc extensions → install bloc extension to be able to wrap widgets with bloc components.
+
+BlocBuilder is like FutureBuilder but using our bloc.
+
+We are using BlocProvider and BlocBuilder in our main.dart file.
+
+Now we are not telling the code to change between screens. main.dart file does this work so we only have to pass the event to AuthBloc without doing the change of screens.

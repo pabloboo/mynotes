@@ -800,3 +800,11 @@ BlocBuilder is like FutureBuilder but using our bloc.
 We are using BlocProvider and BlocBuilder in our main.dart file.
 
 Now we are not telling the code to change between screens. main.dart file does this work so we only have to pass the event to AuthBloc without doing the change of screens.
+
+# Handling Auth Bloc Exceptions During Login
+
+With the changes of the previous step now we are not handling auth exceptions.
+
+If you haven’t login correctly the state you are in is logged out, that’s why we have to change auth_state.dart so that AuthStateLoginFailure is removed and optional exception is added to AuthStateLoggedOut so we have less states to manage.
+
+BlocListener: only listens to changes on the state of a bloc. It’s great for side effects such as displaying dialogs while some other operation is ongoing.

@@ -808,3 +808,11 @@ With the changes of the previous step now we are not handling auth exceptions.
 If you haven’t login correctly the state you are in is logged out, that’s why we have to change auth_state.dart so that AuthStateLoginFailure is removed and optional exception is added to AuthStateLoggedOut so we have less states to manage.
 
 BlocListener: only listens to changes on the state of a bloc. It’s great for side effects such as displaying dialogs while some other operation is ongoing.
+
+# Moving to Bloc for Routing, Dialogs and Loading Screens
+
+We are using some direct calls to AuthService (we have to change that to call AuthBloc) and we also are using Navigator.of to change between screens. We should get rid of manual work related to routing and authentication.
+
+Import equatable → flutter pub add equatable
+
+We are using equatable because we need to produce various mutations of the AuthStateLoggedOut.

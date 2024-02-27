@@ -809,10 +809,22 @@ If you haven’t login correctly the state you are in is logged out, that’s wh
 
 BlocListener: only listens to changes on the state of a bloc. It’s great for side effects such as displaying dialogs while some other operation is ongoing.
 
-# Moving to Bloc for Routing, Dialogs and Loading Screens
+# Moving to Bloc for Routing and Dialogs
 
 We are using some direct calls to AuthService (we have to change that to call AuthBloc) and we also are using Navigator.of to change between screens. We should get rid of manual work related to routing and authentication.
 
 Import equatable → flutter pub add equatable
 
 We are using equatable because we need to produce various mutations of the AuthStateLoggedOut.
+
+# Loading Screens
+
+The loading dialog must be transaction based. Loading must user overlays and not dialogs.
+
+Overlays are good for loading screens because they have the ability to place themselves on top of another layers.
+
+Loading screen controller: so that we can change the contents of the loading screen as it is displayed. This controller allows us to dissmiss the loading screen and update the contents of the loading screen.
+
+Loading dialog should handled in just one place in the entire application.
+
+In main.dart we need a BlocConsumer because we need to retrieve something (BlocBuilder) and also listen to the value of isLoading (BlocListener).

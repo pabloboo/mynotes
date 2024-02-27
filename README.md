@@ -859,3 +859,58 @@ App name:
 
 - iOS: info.plist → CFBundleDisplayName → MyNotes
 - AndroidManifest.xml → android:label → MyNotes
+
+# Splash Screen
+
+Splash screen: screen that displays while flutter is loading when opening the app.
+
+https://docs.flutter.dev/development/ui/advanced/splash-screen 
+
+We can use our icon to make a splash screen. All we need is a simple design tool like Figma.
+
+Storyboard on iOS → this is only dedicated to the splash screen.
+
+mynotes/ios/Runner. → execute the Runner to open it on xCode on a mac.
+
+If you don’t have a macintosh you will need someone to help you edit this file and send you back the storyboard file.
+
+Open up figma and use the app icon to design a new splash screen using iPhone 13 Pro Max resolution of 1284x2778 (create a rectangle with that dimensions). Give the rectangle a background color, for example, use the tokyo night theme of vsc, search for colors in the readme of the github project. Create a gradiant on the background, put a soft color on the center with a linear gradiant. import appstore.png and put it in the center. Download from Figma in 3x, 2x and 1x flavors (all png).
+
+https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night 
+
+Open xcode → assets → bring the 3 new images to LaunchImage → Launch Screen → change dimensions to make the splash screen fit the screen.
+
+Now on Android:
+
+https://developer.android.com/guide/topics/ui/splash-screen 
+
+https://stackoverflow.com/questions/28507609/image-resolution-for-mdpi-hdpi-xhdpi-and-xxhdpi/52152009 
+
+https://marketplace.visualstudio.com/items?itemName=enkia.tokyo-night
+
+Use the figma splash screen created for ios but export the desing with the following sizes:
+
+LDPI - 0.75x
+MDPI - Original size // means 1.0x here
+HDPI - 1.5x
+XHDPI - 2.0x
+XXHDPI - 3x
+XXXHDPI - 4.0x
+
+Then put each one in the corresponding folder in android/app/res/ make sure all of them are called splash.png in their folders.
+
+search for “android:windowBackground”
+
+<item name="android:windowBackground">@mipmap/splash</item>
+
+there are 2  files styles.xml, you have to change the value in the first ocurrence of those two files.
+
+If you get the error:
+
+```powershell
+E/AndroidRuntime(23528): FATAL EXCEPTION: wmshell.splashscreen
+E/AndroidRuntime(23528): Process: com.android.systemui, PID: 23528
+E/AndroidRuntime(23528): java.lang.RuntimeException: Canvas: trying to draw too large(107907360bytes) bitmap.
+```
+
+Try changing the figma rectangle size to 1080x1920.

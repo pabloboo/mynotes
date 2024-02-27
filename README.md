@@ -928,3 +928,51 @@ To take the screenshots you can have inside MaterialApp the property debugShowCh
 Then provide all the app information.
 
 In XCode make a release build and send it to App Store Connect.
+
+# Releasing our iOS App
+
+TestFlight is used to test the app before submitting it to the App Store.
+
+Install TestFlight for Mac and your iOS decive.
+
+Add your test users to TestFlight.
+
+Add your build to App Store Connect.
+
+Complete App Information.
+
+Publish the app and wait for Apple to review it.
+
+# Fixing Firebase Security Rules and Resubmitting the iOS App
+
+Remove the version from App Store Connect, even if it’s already in review.
+
+Remove your build as well.
+
+Clean our FirebaseDB (users and notes).
+
+https://firebase.google.com/docs/firestore/security/rules-conditions 
+
+[console.firebase.google.com](http://console.firebase.google.com) → Cloud firestore database → rules
+
+```json
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+    	allow read, update, delete: if request.auth != null 
+      	&& request.auth.uid == resource.data.user_id;
+      allow read, write: if request.auth != null;
+    }
+  }
+}
+```
+
+Filter the notes before getting the snapshot → notes.where(…).snapshot.
+
+In pubspec.yaml update your version to 1.1.0+1
+
+flutter clean, flutter pub get, flutter run
+
+Make a new build and send to Apple using XCode.

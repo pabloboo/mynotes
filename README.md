@@ -914,3 +914,17 @@ E/AndroidRuntime(23528): java.lang.RuntimeException: Canvas: trying to draw too 
 ```
 
 Try changing the figma rectangle size to 1080x1920.
+
+# Sending our iOS app to App Store Connect
+
+We need an .ipa file (contains all the app resources, similar to a .zip but with another extension) to send to Aple but before that we need to prepare App Store Connect.
+
+App Store Connect: your developer portal to releasing iOS and macOS apps. Firebase console for iOS developers.
+
+First you have to create a new app in App Store Connect.
+
+To take the screenshots you can have inside MaterialApp the property debugShowCheckedModeBanner:false so that the debug tag is hidden.
+
+Then provide all the app information.
+
+In XCode make a release build and send it to App Store Connect.

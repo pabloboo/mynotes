@@ -828,3 +828,11 @@ Loading screen controller: so that we can change the contents of the loading scr
 Loading dialog should handled in just one place in the entire application.
 
 In main.dart we need a BlocConsumer because we need to retrieve something (BlocBuilder) and also listen to the value of isLoading (BlocListener).
+
+# Final Touches Before App Release
+
+We need to clean up the design of the app.
+
+We don’t have a password reset at the moment, this will make it easier to reset their passwords themselves. → add a new authEvent → add a new AuthStateForgotPassword → Declare sendPasswordReset function in auth_provider.dart → Implement the funciton in firebase_auth_provider.dart → implement the function in auth_service.dart → Handle AuthEventForgotPassword in auth_bloc.dart → create new dialog for password reset → create new view for password reset → In main.dart, for AuthStateForgotPassword return ForgotPasswordView() → In login view we have to add a button to go to forgotPasswordView.
+
+In Flutter if you catch an exception with catch(\_) you are really not ignoring it, you are calling the exception ‘_’.

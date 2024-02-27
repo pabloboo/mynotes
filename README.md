@@ -836,3 +836,26 @@ We need to clean up the design of the app.
 We don’t have a password reset at the moment, this will make it easier to reset their passwords themselves. → add a new authEvent → add a new AuthStateForgotPassword → Declare sendPasswordReset function in auth_provider.dart → Implement the funciton in firebase_auth_provider.dart → implement the function in auth_service.dart → Handle AuthEventForgotPassword in auth_bloc.dart → create new dialog for password reset → create new view for password reset → In main.dart, for AuthStateForgotPassword return ForgotPasswordView() → In login view we have to add a button to go to forgotPasswordView.
 
 In Flutter if you catch an exception with catch(\_) you are really not ignoring it, you are calling the exception ‘_’.
+
+# App Icons and App Name
+
+Splash screen: screen that displays while flutter is loading when opening the app.
+
+https://www.stockio.com/ → find free app icons.
+
+https://www.stockio.com/free-icon/sticky-note-filo-icon
+
+https://appicon.co → generate different icon sizes.
+
+https://pub.dev/packages/flutter_launcher_icons → tool for setting flutter app icons.
+
+flutter pub add flutter_launcher_icons → add dependency.
+
+Create flutter_launcher_icons.yaml → upload icon.png → flutter pub run flutter_launcher_icons:main
+
+flutter clean → flutter pub get → flutter run
+
+App name:
+
+- iOS: info.plist → CFBundleDisplayName → MyNotes
+- AndroidManifest.xml → android:label → MyNotes

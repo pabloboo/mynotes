@@ -17,6 +17,8 @@ samples, guidance on mobile development, and a full API reference.
 
 # Basic Application Concepts
 
+Please, check also the original repo [here](https://github.com/vandadnp/mynotes-course). To create this repo I followed his Flutter course and added a little explanation for each chapter, you can see it on the Readme file of this project. You can check the code added in each chapter looking on the commit history (commits are labeled the same way as course's chapters).
+
 Follow [this video](https://www.youtube.com/watch?v=VPvVD8t02U8&ab_channel=freeCodeCamp.org) implementing all the concepts into an app (the video creates a notes app). Test with exercises in [Dartpad](https://dartpad.dev/?id).
 
 # Developer Accounts
@@ -1004,3 +1006,34 @@ In Android Studio create a 7 and 10 inch tablet → select this devices on vsc t
 Create signing key in ~/.android → create [key.properties](http://key.properties) → update build.gradle for signing → flutter clean, flutter pub get, flutter build appbundle.
 
 Upload the appbundle (build/app/outputs/bundle/release/app-release.aab) to production/testing in google play console.
+
+# Localization in Flutter
+
+Localization: making your application more accessible in other countries.
+
+What we will localize: English and Spanish languages.
+
+https://docs.flutter.dev/development/accessibility-and-localization/internationalization 
+
+l10n → localization.
+
+i18n → Internationalization.
+
+Add Flutter localizations dependency:
+
+flutter pub add flutter_localizations --sdk=flutter
+flutter pub add intl
+
+In pubspec.yaml add, under flutter, generate:true (it is for how code generation is done, autogenerates code).
+
+Support foi iOS: add supporte localizations to info.plist using <key>CFBundleLocations</key>
+
+Add l10n.yaml file under the root folder of your project.
+
+ARB files (Application Resource Bundle) is used by Flutter to manage its localization files, they are like json files.
+
+Support localizations and locales: add localizationsDelegates and supportedLocales in main.dart under MaterialApp. For example a date picker would be different in Spanish and English language.
+
+Create an extension on BuildContext for localization → lib/extensions/buildcontext/loc.dart
+
+By having that extension instead of writing AppLocalizations.of(context)!.my_title you can write context.loc.my_title.

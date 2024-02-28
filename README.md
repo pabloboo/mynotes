@@ -955,7 +955,7 @@ https://firebase.google.com/docs/firestore/security/rules-conditions
 
 [console.firebase.google.com](http://console.firebase.google.com) → Cloud firestore database → rules
 
-```json
+```
 rules_version = '2';
 
 service cloud.firestore {
@@ -976,3 +976,31 @@ In pubspec.yaml update your version to 1.1.0+1
 flutter clean, flutter pub get, flutter run
 
 Make a new build and send to Apple using XCode.
+
+# Releasing our Android App
+
+We need an app bundle.
+
+https://play.google.com/
+
+https://developer.android.com/distribute/console 
+
+https://play.google.com/console/about → create app → complete app info.
+
+Mobile screenshots: open up scrcpy and in terminal: adb exec-out screencap -p > fileX.png
+
+https://www.xda-developers.com/install-adb-windows-macos-linux/ 
+
+https://developer.android.com/tools/releases/platform-tools?hl=es-419 → descargar adb y abrir una terminal dentro de la carpeta descargada.
+
+.\adb.exe
+
+.\adb.exe exec-out screencap -p > homepage.png
+
+In Android Studio create a 7 and 10 inch tablet → select this devices on vsc to open the emulator and do the app screenshots. (Nexus 10 y 7 WSVGA)
+
+[https://docs.flutter.dev/deployment/andorid](https://docs.flutter.dev/deployment/android) 
+
+Create signing key in ~/.android → create [key.properties](http://key.properties) → update build.gradle for signing → flutter clean, flutter pub get, flutter build appbundle.
+
+Upload the appbundle (build/app/outputs/bundle/release/app-release.aab) to production/testing in google play console.

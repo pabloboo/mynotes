@@ -15,20 +15,23 @@ import 'package:mynotes/views/verify_email_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MaterialApp(
-    title: 'Flutter Demo',
-    theme: ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      useMaterial3: true,
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: BlocProvider<AuthBloc>(
+        create: (context) => AuthBloc(FirebaseAuthProvider()),
+        child: const HomePage(),
+      ),
+      routes: {
+        createOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
+      },
     ),
-    home: BlocProvider<AuthBloc>(
-      create: (context) => AuthBloc(FirebaseAuthProvider()),
-      child: const HomePage(),
-    ),
-    routes: {
-      createOrUpdateNoteRoute: (context) => const CreateUpdateNoteView(),
-    },
-  ));
+  );
 }
 
 class HomePage extends StatelessWidget {
@@ -57,8 +60,7 @@ class HomePage extends StatelessWidget {
         return const RegisterView();
       } else if (state is AuthStateForgotPassword) {
         return const ForgotPasswordView();
-      }
-       else {
+      } else {
         return const Scaffold(
           body: CircularProgressIndicator(),
         );
